@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>https:run-cao.github.io/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 May 2022 20:18:46 +0800</lastBuildDate>
+    
+	<atom:link href="https:run-cao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog</title>
+      <link>https:run-cao.github.io/post/blog/</link>
+      <pubDate>Wed, 04 May 2022 20:18:46 +0800</pubDate>
+      
+      <guid>https:run-cao.github.io/post/blog/</guid>
+      <description>&lt;h1 id=&#34;linux安装及配置&#34;&gt;Linux安装及配置&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;详情见文档《编程环境和软件工具安装手册》。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;11linux各种命令安装&#34;&gt;1.1Linux各种命令安装&lt;/h3&gt;
+&lt;p&gt;首先，设置虚拟机与物理宿主机的网络连接。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;选择&lt;strong&gt;桥接模式&lt;/strong&gt;，并选择连接到物理宿主机的上网网卡。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;ul&gt;
+&lt;li&gt;CentOS7 镜像安装完成后使用 yum install net-tools 命令报错（数据源不可用）
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://urlify.cn/VJVJZb&#34;&gt;https://urlify.cn/VJVJZb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ifconfig命令
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;yum -y install net-tools&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://urlify.cn/BJJB7f&#34;&gt;bash: ifconfig: 未找到命令 解决方案&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;vim命令
+&lt;ul&gt;
+&lt;li&gt;yum -y install vim*&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/joxin/p/9700661.html&#34;&gt;centos找不到vim命令&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;wget命令
+&lt;ul&gt;
+&lt;li&gt;yum -y install wget&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://urlify.cn/aUZRvy&#34;&gt;&lt;strong&gt;yum -y install wget 却又报没有可用软件包&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-配置固定静态ip&#34;&gt;1.2 配置固定静态IP&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;见文档《编程环境和软件工具安装手（册》。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;首先查看我们的 PC 无线网的默认网关是多少，然后 IP 以及网关设置必须与 PC 无线网网关在同一个网段内才能实现通信。
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://urlify.cn/AbEZR3&#34;&gt;&lt;strong&gt;win10 如何查看已连接网络状态详细信息&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://urlify.cn/EjAv2q&#34;&gt;&lt;strong&gt;linux 下桥接模式设置静态 IP 实现上网&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;13克隆虚拟机&#34;&gt;1.3克隆虚拟机&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://urlify.cn/vMfQfq&#34;&gt;VMware 如何通过现有虚拟机克隆新的虚拟机&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://urlify.cn/y2Qfqa&#34;&gt;Vmvare克隆虚拟机（centos7）&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;14tabby的使用&#34;&gt;1.4tabby的使用&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/29f822147c91&#34;&gt;Tabby 使用指南&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;15切换-centos-软件源&#34;&gt;1.5切换 CentOS 软件源&lt;/h3&gt;
+&lt;p&gt;有时候 &lt;code&gt;CentOS&lt;/code&gt; 默认的 &lt;code&gt;yum&lt;/code&gt; 源不一定是国内镜像，导致 &lt;code&gt;yum&lt;/code&gt; 在线安装及更新速度不是很理想。这时候需要将 &lt;code&gt;yum&lt;/code&gt; 源设置为国内镜像站点。国内主要开源的镜像站点是网易和阿里云。&lt;/p&gt;
+&lt;p&gt;1、首先备份系统自带 &lt;code&gt;yum&lt;/code&gt; 源配置文件 &lt;code&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;2、下载阿里云的 &lt;code&gt;yum&lt;/code&gt; 源配置文件到 &lt;code&gt;/etc/yum.repos.d/CentOS7&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;3、生成缓存&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum makecache
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https:run-cao.github.io/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https:run-cao.github.io/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;h2 id=&#34;浮点数的精度问题&#34;&gt;浮点数的精度问题&lt;/h2&gt;
+&lt;h3 id=&#34;浮点数在计算机中是如何表示的&#34;&gt;浮点数在计算机中是如何表示的&lt;/h3&gt;
+&lt;p&gt;浮点数在计算机中的存储方式遵循&lt;strong&gt;IEEE 754 浮点数计数标准&lt;/strong&gt;，可以用科学计数法表示为：
+$$
+1.M&amp;hellip;\times2^E
+$$
+采用&lt;strong&gt;尾数 + 阶码&lt;/strong&gt;的编码方式，更通俗一点说，就是类似于数学课本上所学的&lt;strong&gt;科学计数法&lt;/strong&gt;表示方式：&lt;strong&gt;有效数字 + 指数位&lt;/strong&gt;！&lt;/p&gt;
+&lt;p&gt;只要给出：&lt;strong&gt;符号（S）&lt;/strong&gt;、&lt;strong&gt;阶码部分（E）&lt;/strong&gt;、&lt;strong&gt;尾数部分（M）&lt;/strong&gt; 这三个维度的信息，一个浮点数的表示就完全确定下来了，所以&lt;code&gt;float&lt;/code&gt;和&lt;code&gt;double&lt;/code&gt;这两种浮点数在内存中的存储结构如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitee.com/run-cao/typora_repo/raw/master/img/202201032114525.png&#34; alt=&#34;image-20220103145535181&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1、符号部分（S）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;0&lt;/code&gt;-正 &lt;code&gt;1&lt;/code&gt;-负&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、阶码部分（E）（指数部分）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于&lt;code&gt;float&lt;/code&gt;型浮点数，指数部分&lt;code&gt;8&lt;/code&gt;位，考虑可正可负，因此可以表示的指数范围为&lt;code&gt;-127 ~ 128&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;对于&lt;code&gt;double&lt;/code&gt;型浮点数，指数部分&lt;code&gt;11&lt;/code&gt;位，考虑可正可负，因此可以表示的指数范围为&lt;code&gt;-1023 ~ 1024&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3、尾数部分（M）&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;浮点数的精度是由尾数的位数来决定的&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于&lt;code&gt;float&lt;/code&gt;型浮点数，尾数部分&lt;code&gt;23&lt;/code&gt;位，换算成十进制就是 &lt;code&gt;2^23=8388608&lt;/code&gt;，所以十进制精度只有&lt;code&gt;6 ~ 7&lt;/code&gt;位；&lt;/li&gt;
+&lt;li&gt;对于&lt;code&gt;double&lt;/code&gt;型浮点数，尾数部分&lt;code&gt;52&lt;/code&gt;位，换算成十进制就是 &lt;code&gt;2^52 = 4503599627370496&lt;/code&gt;，所以十进制精度只有&lt;code&gt;15 ~ 16&lt;/code&gt;位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;进制转换计算案例&#34;&gt;进制转换计算案例&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先来个简单的例子&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;比如：&lt;strong&gt;把十进制小数&lt;code&gt;0.875&lt;/code&gt;转换成二进制，具体怎么操作？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;可以分几大步走：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1、以小数点为界，拆分&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、整数部分转换&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;整数转二进制，使用：&lt;strong&gt;除2取余法&lt;/strong&gt; 即可。而这里的&lt;code&gt;0.875&lt;/code&gt;整数部分为0，无需操作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、小数部分转换&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;小数部分的转换不同于整数部分，采用的是 &lt;strong&gt;“乘2取整法”&lt;/strong&gt; ，图示如下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;strong&gt;4、合并结果&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;整数部分 + 小数部分&lt;/code&gt;，最终得到二进制结果为&lt;code&gt;0.111&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;按&lt;strong&gt;尾数 + 阶码&lt;/strong&gt;的计算机计数方式，则可以表示为：
+$$
+1.11\times2^{-1}
+$$
+所以对应可得：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;符号位&lt;/strong&gt;：&lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阶码（E）部分&lt;/strong&gt;：若以&lt;code&gt;float&lt;/code&gt;为例，应为 &lt;code&gt;127 +（-1）= 126&lt;/code&gt;，因此二进制表示为：&lt;code&gt;01111110&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;尾数部分（M）&lt;/strong&gt;：若以&lt;code&gt;float&lt;/code&gt;为例，应为&lt;code&gt;23&lt;/code&gt;位，因此尾部补齐后为&lt;code&gt;11000000000000000000000&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此最终的总结果为（以&lt;code&gt;32&lt;/code&gt;位精度&lt;code&gt;float&lt;/code&gt;表示）：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;00111111011000000000000000000000
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;再来个复杂点的例子&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;按&lt;strong&gt;尾数 + 阶码&lt;/strong&gt;的计算机计数方式，则可以表示为：
+$$
+1.1001011100&amp;hellip;\times2^2
+$$
+所以对应可得：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;符号位&lt;/strong&gt;：0&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阶码（E）部分&lt;/strong&gt;：若以&lt;code&gt;float&lt;/code&gt;为例，应为 &lt;code&gt;127 +（2）= 129&lt;/code&gt;，因此二进制表示为：&lt;code&gt;10000001&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;尾数部分（M）&lt;/strong&gt;：&lt;code&gt;1001011100...&lt;/code&gt;，其实它本身无限不循环，但若以&lt;code&gt;float&lt;/code&gt;型精度来截取&lt;code&gt;23&lt;/code&gt;位，则可以表示为&lt;code&gt;10010111000010100011111&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此最终的总结果为（以&lt;code&gt;32&lt;/code&gt;位精度&lt;code&gt;float&lt;/code&gt;表示）：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;01000000110010111000010100011111
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;所以像这种无限位数的尾数情况，用计算机存储产生截取是必然的，必定会有一定的&lt;strong&gt;精度损失&lt;/strong&gt;！所以这也从根本上解释了为什么float或者double这种类型数据使用时的风险性，因此必须要结合实际业务理性考量。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.binaryconvert.com/convert_float.html?decimal=054046051054#&#34;&gt;&lt;strong&gt;二进制转换工具站&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;精度问题如何解决&#34;&gt;精度问题如何解决&lt;/h3&gt;
+&lt;p&gt;所以如果涉及&lt;strong&gt;商品金额&lt;/strong&gt;、&lt;strong&gt;交易值&lt;/strong&gt;、&lt;strong&gt;货币计算&lt;/strong&gt;等这种对精度要求很高的场景该怎么办呢？&lt;/p&gt;
+&lt;h5 id=&#34;方法一用字符串或者数组解决多位数问题&#34;&gt;方法一：用字符串或者数组解决多位数问题&lt;/h5&gt;
+&lt;p&gt;校招刷过算法题的小伙伴们应该都知道，用字符串或者数组表示大数是一个典型的解题思路。&lt;/p&gt;
+&lt;p&gt;比如经典面试题：&lt;strong&gt;编写两个任意位数大数的加法、减法、乘法等运算&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;这时候我们我们可以用字符串或者数组来表示这种大数，然后按照四则运算的规则来手动模拟出具体计算过程，中间还需要考虑各种诸如：&lt;strong&gt;进位&lt;/strong&gt;、&lt;strong&gt;借位&lt;/strong&gt;、&lt;strong&gt;符号&lt;/strong&gt;等等问题的处理，确实十分复杂，本文不做赘述。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;方法二java的大数类是个好东西&#34;&gt;方法二：Java的大数类是个好东西&lt;/h5&gt;
+&lt;p&gt;JDK早已为我们考虑到了浮点数的计算精度问题，因此提供了专用于高精度数值计算的&lt;strong&gt;大数类&lt;/strong&gt;来方便我们使用。Java的大数类位于&lt;code&gt;java.math&lt;/code&gt;包下：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;可以看到，常用的&lt;code&gt;BigInteger&lt;/code&gt; 和 &lt;code&gt;BigDecimal&lt;/code&gt;就是处理高精度数值计算的利器。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;BigDecimal num3 = new BigDecimal( Double.toString( 1.0f ) );
+BigDecimal num4 = new BigDecimal( Double.toString( 0.99999999f ) );
+System.out.println( num3 == num4 );  // 打印 false
+
+BigDecimal num1 = new BigDecimal( Double.toString( 0.2 ) );
+BigDecimal num2 = new BigDecimal( Double.toString( 0.7 ) );
+
+// 加
+System.out.println( num1.add( num2 ) );  // 打印：0.9
+
+// 减
+System.out.println( num2.subtract( num1 ) );  // 打印：0.5
+
+// 乘
+System.out.println( num1.multiply( num2 ) );  // 打印：0.14
+
+// 除
+System.out.println( num2.divide( num1 ) );  // 打印：3.5
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;附：将各类型转成String的方法：&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;new String(要转换的类型)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;各类型.ToString(要转换的类型)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;String.valueOf(要转换的类型)&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当然了，像&lt;code&gt;BigInteger&lt;/code&gt; 和 &lt;code&gt;BigDecimal&lt;/code&gt;这种大数类的运算效率肯定是不如原生类型效率高，代价还是比较昂贵的，是否选用需要根据实际场景来评估。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>My New Hugo Site  | Blog</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.98.0" />
+	
+	
+	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+	
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	<script>
+		(function (u, c) {
+			var d = document,
+				t = 'script',
+				o = d.createElement(t),
+				s = d.getElementsByTagName(t)[0];
+			o.src = u;
+			if (c) {
+				o.addEventListener('load', function (e) {
+					c(e);
+				});
+			}
+			s.parentNode.insertBefore(o, s);
+		})('https:run-cao.github.io', function () {
+			pangu.spacingPage();
+		});
+	</script>
+	
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https:run-cao.github.io" title="My New Hugo Site" class="heading font-cursive icon">My New Hugo Site</a>
+	</h2>
+</div>
+<h1 class="pt-2">Blog</h1>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+
+	
+
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2022-05-04T20:18:46&#43;08:00">2022-5-4 20:18</time>
+</div>
+
+<hr />
+
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="linux安装及配置">Linux安装及配置</h1>
+<blockquote>
+<p>详情见文档《编程环境和软件工具安装手册》。</p>
+</blockquote>
+<h3 id="11linux各种命令安装">1.1Linux各种命令安装</h3>
+<p>首先，设置虚拟机与物理宿主机的网络连接。</p>
+<!-- raw HTML omitted -->
+<p>选择<strong>桥接模式</strong>，并选择连接到物理宿主机的上网网卡。</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>CentOS7 镜像安装完成后使用 yum install net-tools 命令报错（数据源不可用）
+<ul>
+<li><a href="https://urlify.cn/VJVJZb">https://urlify.cn/VJVJZb</a></li>
+</ul>
+</li>
+<li>ifconfig命令
+<ul>
+<li><strong>yum -y install net-tools</strong></li>
+<li><a href="https://urlify.cn/BJJB7f">bash: ifconfig: 未找到命令 解决方案</a></li>
+</ul>
+</li>
+<li>vim命令
+<ul>
+<li>yum -y install vim*</li>
+<li><a href="https://www.cnblogs.com/joxin/p/9700661.html">centos找不到vim命令</a></li>
+</ul>
+</li>
+<li>wget命令
+<ul>
+<li>yum -y install wget</li>
+<li><a href="https://urlify.cn/aUZRvy"><strong>yum -y install wget 却又报没有可用软件包</strong></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="12-配置固定静态ip">1.2 配置固定静态IP</h3>
+<blockquote>
+<p>见文档《编程环境和软件工具安装手（册》。</p>
+</blockquote>
+<ul>
+<li>首先查看我们的 PC 无线网的默认网关是多少，然后 IP 以及网关设置必须与 PC 无线网网关在同一个网段内才能实现通信。
+<ul>
+<li><a href="https://urlify.cn/AbEZR3"><strong>win10 如何查看已连接网络状态详细信息</strong></a></li>
+<li>
+<!-- raw HTML omitted -->
+</li>
+</ul>
+</li>
+<li><a href="https://urlify.cn/EjAv2q"><strong>linux 下桥接模式设置静态 IP 实现上网</strong></a></li>
+</ul>
+<h3 id="13克隆虚拟机">1.3克隆虚拟机</h3>
+<p><a href="https://urlify.cn/vMfQfq">VMware 如何通过现有虚拟机克隆新的虚拟机</a></p>
+<p><a href="https://urlify.cn/y2Qfqa">Vmvare克隆虚拟机（centos7）</a></p>
+<h3 id="14tabby的使用">1.4tabby的使用</h3>
+<p><a href="https://www.jianshu.com/p/29f822147c91">Tabby 使用指南</a></p>
+<h3 id="15切换-centos-软件源">1.5切换 CentOS 软件源</h3>
+<p>有时候 <code>CentOS</code> 默认的 <code>yum</code> 源不一定是国内镜像，导致 <code>yum</code> 在线安装及更新速度不是很理想。这时候需要将 <code>yum</code> 源设置为国内镜像站点。国内主要开源的镜像站点是网易和阿里云。</p>
+<p>1、首先备份系统自带 <code>yum</code> 源配置文件 <code>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</code></p>
+<p>2、下载阿里云的 <code>yum</code> 源配置文件到 <code>/etc/yum.repos.d/CentOS7</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+</span></span></code></pre></div><p>3、生成缓存</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>yum makecache
+</span></span></code></pre></div></div>
+	</section>
+
+
+</article>
+
+		</main>
+		<div class="w-full h-0 flex-none order-3"></div>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start   max-h-16">
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 89 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="double-line" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        
+    </a>
+    
+    
+</div>
+<div >
+
+
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+	</div>
+</body>
+
+</html>

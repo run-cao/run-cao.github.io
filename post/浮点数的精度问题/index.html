@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>My New Hugo Site </title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1">
+	<meta name="generator" content="Hugo 0.98.0" />
+	
+	
+	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+	
+
+	
+	
+	<link href="/dist/app.css" rel="stylesheet">
+	
+
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	<script>
+		(function (u, c) {
+			var d = document,
+				t = 'script',
+				o = d.createElement(t),
+				s = d.getElementsByTagName(t)[0];
+			o.src = u;
+			if (c) {
+				o.addEventListener('load', function (e) {
+					c(e);
+				});
+			}
+			s.parentNode.insertBefore(o, s);
+		})('https:run-cao.github.io', function () {
+			pangu.spacingPage();
+		});
+	</script>
+	
+	
+	
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-sans">
+	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
+		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
+			<div
+				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
+				
+<div>
+	<h2>
+		<a href="https:run-cao.github.io" title="My New Hugo Site" class="heading font-cursive icon">My New Hugo Site</a>
+	</h2>
+</div>
+<h1 class="pt-2"></h1>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+
+	
+
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="0001-01-01T00:00:00Z">0001-1-1 00:00</time>
+</div>
+
+<hr />
+
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-1/2 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h2 id="浮点数的精度问题">浮点数的精度问题</h2>
+<h3 id="浮点数在计算机中是如何表示的">浮点数在计算机中是如何表示的</h3>
+<p>浮点数在计算机中的存储方式遵循<strong>IEEE 754 浮点数计数标准</strong>，可以用科学计数法表示为：
+$$
+1.M&hellip;\times2^E
+$$
+采用<strong>尾数 + 阶码</strong>的编码方式，更通俗一点说，就是类似于数学课本上所学的<strong>科学计数法</strong>表示方式：<strong>有效数字 + 指数位</strong>！</p>
+<p>只要给出：<strong>符号（S）</strong>、<strong>阶码部分（E）</strong>、<strong>尾数部分（M）</strong> 这三个维度的信息，一个浮点数的表示就完全确定下来了，所以<code>float</code>和<code>double</code>这两种浮点数在内存中的存储结构如下所示：</p>
+<p><img src="https://gitee.com/run-cao/typora_repo/raw/master/img/202201032114525.png" alt="image-20220103145535181"></p>
+<p><strong>1、符号部分（S）</strong></p>
+<p><code>0</code>-正 <code>1</code>-负</p>
+<p><strong>2、阶码部分（E）（指数部分）</strong>：</p>
+<ul>
+<li>对于<code>float</code>型浮点数，指数部分<code>8</code>位，考虑可正可负，因此可以表示的指数范围为<code>-127 ~ 128</code></li>
+<li>对于<code>double</code>型浮点数，指数部分<code>11</code>位，考虑可正可负，因此可以表示的指数范围为<code>-1023 ~ 1024</code></li>
+</ul>
+<p><strong>3、尾数部分（M）</strong>：</p>
+<p><strong>浮点数的精度是由尾数的位数来决定的</strong>：</p>
+<ul>
+<li>对于<code>float</code>型浮点数，尾数部分<code>23</code>位，换算成十进制就是 <code>2^23=8388608</code>，所以十进制精度只有<code>6 ~ 7</code>位；</li>
+<li>对于<code>double</code>型浮点数，尾数部分<code>52</code>位，换算成十进制就是 <code>2^52 = 4503599627370496</code>，所以十进制精度只有<code>15 ~ 16</code>位</li>
+</ul>
+<hr>
+<hr>
+<h3 id="进制转换计算案例">进制转换计算案例</h3>
+<blockquote>
+<p>先来个简单的例子</p>
+</blockquote>
+<p>比如：<strong>把十进制小数<code>0.875</code>转换成二进制，具体怎么操作？</strong></p>
+<p>可以分几大步走：</p>
+<p><strong>1、以小数点为界，拆分</strong></p>
+<p><strong>2、整数部分转换</strong></p>
+<p>整数转二进制，使用：<strong>除2取余法</strong> 即可。而这里的<code>0.875</code>整数部分为0，无需操作。</p>
+<p><strong>3、小数部分转换</strong></p>
+<p>小数部分的转换不同于整数部分，采用的是 <strong>“乘2取整法”</strong> ，图示如下：</p>
+<!-- raw HTML omitted -->
+<p><strong>4、合并结果</strong></p>
+<p><code>整数部分 + 小数部分</code>，最终得到二进制结果为<code>0.111</code>。</p>
+<p>按<strong>尾数 + 阶码</strong>的计算机计数方式，则可以表示为：
+$$
+1.11\times2^{-1}
+$$
+所以对应可得：</p>
+<ul>
+<li><strong>符号位</strong>：<code>0</code></li>
+<li><strong>阶码（E）部分</strong>：若以<code>float</code>为例，应为 <code>127 +（-1）= 126</code>，因此二进制表示为：<code>01111110</code></li>
+<li><strong>尾数部分（M）</strong>：若以<code>float</code>为例，应为<code>23</code>位，因此尾部补齐后为<code>11000000000000000000000</code>。</li>
+</ul>
+<p>因此最终的总结果为（以<code>32</code>位精度<code>float</code>表示）：</p>
+<pre tabindex="0"><code>00111111011000000000000000000000
+</code></pre><blockquote>
+<p>再来个复杂点的例子</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>按<strong>尾数 + 阶码</strong>的计算机计数方式，则可以表示为：
+$$
+1.1001011100&hellip;\times2^2
+$$
+所以对应可得：</p>
+<ul>
+<li><strong>符号位</strong>：0</li>
+<li><strong>阶码（E）部分</strong>：若以<code>float</code>为例，应为 <code>127 +（2）= 129</code>，因此二进制表示为：<code>10000001</code></li>
+<li><strong>尾数部分（M）</strong>：<code>1001011100...</code>，其实它本身无限不循环，但若以<code>float</code>型精度来截取<code>23</code>位，则可以表示为<code>10010111000010100011111</code></li>
+</ul>
+<p>因此最终的总结果为（以<code>32</code>位精度<code>float</code>表示）：</p>
+<pre tabindex="0"><code>01000000110010111000010100011111
+</code></pre><p>所以像这种无限位数的尾数情况，用计算机存储产生截取是必然的，必定会有一定的<strong>精度损失</strong>！所以这也从根本上解释了为什么float或者double这种类型数据使用时的风险性，因此必须要结合实际业务理性考量。</p>
+<p><a href="http://www.binaryconvert.com/convert_float.html?decimal=054046051054#"><strong>二进制转换工具站</strong></a></p>
+<hr>
+<hr>
+<h3 id="精度问题如何解决">精度问题如何解决</h3>
+<p>所以如果涉及<strong>商品金额</strong>、<strong>交易值</strong>、<strong>货币计算</strong>等这种对精度要求很高的场景该怎么办呢？</p>
+<h5 id="方法一用字符串或者数组解决多位数问题">方法一：用字符串或者数组解决多位数问题</h5>
+<p>校招刷过算法题的小伙伴们应该都知道，用字符串或者数组表示大数是一个典型的解题思路。</p>
+<p>比如经典面试题：<strong>编写两个任意位数大数的加法、减法、乘法等运算</strong>。</p>
+<p>这时候我们我们可以用字符串或者数组来表示这种大数，然后按照四则运算的规则来手动模拟出具体计算过程，中间还需要考虑各种诸如：<strong>进位</strong>、<strong>借位</strong>、<strong>符号</strong>等等问题的处理，确实十分复杂，本文不做赘述。</p>
+<hr>
+<h5 id="方法二java的大数类是个好东西">方法二：Java的大数类是个好东西</h5>
+<p>JDK早已为我们考虑到了浮点数的计算精度问题，因此提供了专用于高精度数值计算的<strong>大数类</strong>来方便我们使用。Java的大数类位于<code>java.math</code>包下：</p>
+<!-- raw HTML omitted -->
+<p>可以看到，常用的<code>BigInteger</code> 和 <code>BigDecimal</code>就是处理高精度数值计算的利器。</p>
+<pre tabindex="0"><code>BigDecimal num3 = new BigDecimal( Double.toString( 1.0f ) );
+BigDecimal num4 = new BigDecimal( Double.toString( 0.99999999f ) );
+System.out.println( num3 == num4 );  // 打印 false
+
+BigDecimal num1 = new BigDecimal( Double.toString( 0.2 ) );
+BigDecimal num2 = new BigDecimal( Double.toString( 0.7 ) );
+
+// 加
+System.out.println( num1.add( num2 ) );  // 打印：0.9
+
+// 减
+System.out.println( num2.subtract( num1 ) );  // 打印：0.5
+
+// 乘
+System.out.println( num1.multiply( num2 ) );  // 打印：0.14
+
+// 除
+System.out.println( num2.divide( num1 ) );  // 打印：3.5
+</code></pre><p><em>附：将各类型转成String的方法：</em></p>
+<ol>
+<li><em>new String(要转换的类型)</em></li>
+<li><em>各类型.ToString(要转换的类型)</em></li>
+<li><em>String.valueOf(要转换的类型)</em></li>
+</ol>
+<p>当然了，像<code>BigInteger</code> 和 <code>BigDecimal</code>这种大数类的运算效率肯定是不如原生类型效率高，代价还是比较昂贵的，是否选用需要根据实际场景来评估。</p>
+</div>
+	</section>
+
+
+</article>
+
+		</main>
+		<div class="w-full h-0 flex-none order-3"></div>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
+	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
+	
+	
+</ul>
+	
+
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start   max-h-16">
+	
+</div>
+	<div class="text-sm text-gray-500 leading-tight a-gray">
+		
+		<br />
+		Built with Hugo and theme <a href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>. 185 words in this page.
+	</div>
+</div>
+
+			</div>
+		</aside>
+		<footer class="w-full md:w-3/5 xl:w-1/2 order-3 max-w-3xl md:order-4 pt-2">
+			
+<hr class="double-line" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    
+    <a class="flex-grow-0" href="/post/blog/">
+        Blog
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" /></svg></a>
+    
+</div>
+<div >
+
+
+
+</div>
+<hr />
+<div class="pb-2">
+    
+</div>
+<hr />
+
+		</footer>
+		
+
+<script src="/dist/app.js"></script>
+
+
+	</div>
+</body>
+
+</html>
